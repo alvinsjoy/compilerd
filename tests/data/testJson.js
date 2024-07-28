@@ -160,6 +160,54 @@ const testCases = [
         },
     },
     {
+        name: 'go : hello world',
+        reqObject: {
+            language: 'go',
+            script:
+                'package main\n' +
+                'import "fmt"\n' +
+                'func main() {\n' +
+                '    fmt.Println("hello world")\n' +
+                '}\n',
+        },
+        expectedResponse: {
+            val: 'hello world\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        name: 'go : for loop',
+        reqObject: {
+            language: 'go',
+            script: `package main
+    
+            import ("fmt")
+            func main() {
+                for i := 0; i < 5; i++ {
+                    fmt.Println(i)
+                }
+            }`,
+        },
+        expectedResponse: {
+            val: '0\n1\n2\n3\n4\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        name: 'rust : hello world',
+        reqObject: {
+            language: 'rust',
+            script: 'fn main() { println!("hello world"); }',
+        },
+        expectedResponse: {
+            val: 'hello world\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
         name: 'java : print stdin',
         reqObject: {
             language: 'java',
@@ -188,7 +236,7 @@ const testCases = [
         reqObject: {
             language: 'ruby',
             script:
-                'print "hello world"'
+                'print "hello world"',
         },
         expectedResponse: {
             val: 'hello world',
@@ -203,7 +251,7 @@ const testCases = [
             script:
                 'user_input = gets.chomp\n' +
                 'puts user_input',
-            stdin: '10\n'
+            stdin: '10\n',
         },
         expectedResponse: {
             val: '10\n',

@@ -1,6 +1,7 @@
 module.exports = {
     C: 'c',
     CPP: 'cpp',
+    GO: 'go',
     PYTHON: 'python',
     JAVA: 'java',
     NODEJS: 'nodejs',
